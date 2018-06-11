@@ -12,11 +12,12 @@ public class DZ2 {
         driver.findElement(By.id("email")).sendKeys("webinar.test@gmail.com");
         driver.findElement(By.id("passwd")).sendKeys("Xcg7299bnSmMuRLp9ITw");
         driver.findElement(By.name("submitLogin")).click();
-        Thread.sleep(1000);
+        pauseBetweenSteps();
         driver.findElement(By.id("tab-AdminDashboard")).click();
-        Thread.sleep(1000);
+        pauseBetweenSteps();
         driver.navigate().refresh();
-        Thread.sleep(1000);
+        pauseBetweenSteps();
+
 
 
         // Clicking menu
@@ -61,7 +62,11 @@ public class DZ2 {
 
         driver.findElement(By.cssSelector("#subtab-AdminAdvancedParameters > a")).click();
         checkB(driver);
+        driver.close();
 
+    }
+    public static void  pauseBetweenSteps() throws InterruptedException {
+        Thread.sleep(1000);
     }
 
     private static void checkB(WebDriver driver) throws InterruptedException {
